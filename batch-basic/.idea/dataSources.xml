@@ -1,11 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
-    <data-source source="LOCAL" name="batch-basic" uuid="2784d160-492a-43a4-a7d8-b002e64c3c9c">
+    <data-source source="LOCAL" name="test" uuid="2784d160-492a-43a4-a7d8-b002e64c3c9c">
       <driver-ref>hsqldb.local</driver-ref>
       <synchronize>true</synchronize>
-      <jdbc-driver>org.hsqldb.jdbc.JDBCDriver</jdbc-driver>
-      <jdbc-url>jdbc:hsqldb:mem:batch-basic</jdbc-url>
+      <jdbc-driver>org.hsqldb.jdbcDriver</jdbc-driver>
+      <jdbc-url>jdbc:hsqldb:mem:test</jdbc-url>
+    </data-source>
+    <data-source source="LOCAL" name="HSQLDB (Local) - jdbc:hsqldb:hsql://localhost/" uuid="4018eef0-e63c-4d8d-a3f0-2a81bffb4633">
+      <driver-ref>hsqldb.local</driver-ref>
+      <synchronize>true</synchronize>
+      <configured-by-url>true</configured-by-url>
+      <jdbc-driver>org.hsqldb.jdbcDriver</jdbc-driver>
+      <jdbc-url>jdbc:hsqldb:hsql://localhost</jdbc-url>
     </data-source>
   </component>
 </project>

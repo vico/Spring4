@@ -18,6 +18,7 @@
 		<maven.test.failure.ignore>true</maven.test.failure.ignore>
 		<spring.framework.version>4.1.6.RELEASE</spring.framework.version>
 		<spring.batch.version>2.1.7.RELEASE</spring.batch.version>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 	<profiles>
 		<profile>
@@ -142,9 +143,10 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-compiler-plugin</artifactId>
+				<version>3.1</version>
 				<configuration>
-					<source>1.5</source>
-					<target>1.5</target>
+					<source>1.6</source>
+					<target>1.6</target>
 				</configuration>
 			</plugin>
 
@@ -156,9 +158,10 @@
 					<mainClass>org.springframework.batch.core.launch.support.CommandLineJobRunner</mainClass>
 					<arguments>
 						<!-- job configuration file -->
-						<argument>classpath:/launch-context.xml</argument>
+						<argument>classpath:/batch-context.xml</argument>
 						<!-- job name -->
 						<argument>job1</argument>
+						<argument>inputFile=classpath:product_csv/1.csv</argument>
 					</arguments>
 				</configuration>
 			</plugin>
@@ -166,6 +169,7 @@
 			<plugin>
 				<groupId>org.apache.maven.plugins</groupId>
 				<artifactId>maven-jar-plugin</artifactId>
+				<version>2.4</version>
 				<configuration>
 					<archive>
 						<index>true</index>
