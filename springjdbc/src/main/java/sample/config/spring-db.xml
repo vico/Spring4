@@ -31,7 +31,7 @@ http://www.springframework.org/schema/jdbc/spring-jdbc.xsd">
         <property name="password" value="${jdbc.password}" />
         <property name="maxActive" value="${jdbc.maxPoolSize}" />
     </bean>
-    <jdbc:initialize-database data-source="dataSource">
+    <jdbc:initialize-database>
         <jdbc:script location="script/table.sql"/>
         <jdbc:script location="script/data.sql"/>
         <jdbc:script location="script/proc.sql" separator="/"/>
