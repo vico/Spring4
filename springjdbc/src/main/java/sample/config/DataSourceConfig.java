@@ -1,7 +1,5 @@
 package sample.config;
 
-import javax.sql.DataSource;
-
 import org.apache.commons.dbcp.BasicDataSource;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.context.annotation.Bean;
@@ -9,8 +7,9 @@ import org.springframework.context.annotation.Configuration;
 import org.springframework.context.annotation.PropertySource;
 import org.springframework.context.support.PropertySourcesPlaceholderConfigurer;
 import org.springframework.core.io.ClassPathResource;
-import org.springframework.core.io.FileSystemResource;
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
+
+import javax.sql.DataSource;
 
 @Configuration
 @PropertySource("jdbc.properties")
@@ -27,8 +26,8 @@ public class DataSourceConfig {
     @Value("${jdbc.maxPoolSize}")
     private int maxPoolSize;
     
-    @Bean
-    public static PropertySourcesPlaceholderConfigurer propertyConfig() {
+    @Bean  // does not work without this bean
+    public static PropertySourcesPlaceholderConfigurer propertyConfig() { // correspond to <context:property-holder>
         return new PropertySourcesPlaceholderConfigurer();
     }
     
